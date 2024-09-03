@@ -1,1 +1,16 @@
-<h1>Home Page.</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Identification</title>
+  </head>
+  <body>
+    <h1>This is image upload page.</h1>
+    <form action="imageprocess" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="file" name="image" id="image" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
