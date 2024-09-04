@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Identification</title>
-  </head>
-  <body>
-    <h1>This is image upload page.</h1>
-    <form action="imageprocess" method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      <input type="file" name="image" id="image" />
-      <input type="submit" value="Submit" />
-    </form>
-  </body>
-</html>
+{% extends 'base.html' %} {% block body %}
+<div class="row my-2">
+  <h1 class="text-center">Upload Image.</h1>
+  <form action="imageprocess" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" class="form-control my-2" name="image" id="image" />
+    <button type="submit" value="Submit" class="my-2 btn btn-secondary">
+      <i class="bi bi-upload pe-2"></i> Submit
+    </button>
+  </form>
+</div>
+{% endblock body %}
